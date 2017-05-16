@@ -1,0 +1,31 @@
+//Person.java 2017-05-16 KST
+package askTime;
+
+public class Person {
+	private String name;
+	private Watch watch;
+	
+	public Person(String name, Watch watch) {
+		this.name = name;
+		this.watch = watch;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setNaem(String name) {
+		this.name = name;
+	}
+	public Watch getWatch() {
+		return watch;
+	}
+	public void setWatch(Watch watch) {
+		this.watch = watch;
+	}
+	
+	public  String whatTime() {
+		if(watch != null) 
+			return watch.watchTime();
+		else
+			return "저는 시계가 없어요 ㅜㅜ";
+	}
+}
