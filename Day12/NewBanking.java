@@ -1,8 +1,9 @@
 // NewBanking.java 2017-05-30 KST
 class Account {
-	public String name;
-	public long balance;
+	private String name;
+	private long balance;
 	
+	//Object Generators
 	public Account() {	
 	}
 	
@@ -11,6 +12,7 @@ class Account {
 		System.out.println(name + "님의 계쫘가 만들어 졌습니다.");
 	}
 	
+	//General Methods
 	public void deposit(long amount) {
 		balance = balance + amount;
 		System.out.println(name + "님의 계좌에 " + amount + "원이 입금되었습니다.");
@@ -25,6 +27,10 @@ class Account {
 		}
 	}
 	
+	//Setters and Getters
+	public String getName() {
+		return name;
+	}
 	public long getBalance() {
 		return balance;
 	}
@@ -47,7 +53,7 @@ class AccountManager {
 	
 	public void deposit(String name, long amount) {
 		for(int i = 0; i < accountNum; i++) {
-			if (arr[i].name.equals(name)) {
+			if (arr[i].getName().equals(name)) {
 				arr[i].deposit(amount);
 				break;
 			}
@@ -56,7 +62,7 @@ class AccountManager {
 	
 	public void withdraw(String name, long amount) {
 		for(int i=0; i<accountNum; i++) {
-			if (arr[i].name.equals(name)) {
+			if (arr[i].getName().equals(name)) {
 				arr[i].withdraw(amount);
 				break;
 			}
@@ -66,7 +72,7 @@ class AccountManager {
 	public String getBalance(String name) {
 		String str = null;
 		for(int i=0; i<accountNum; i++) {
-			if (arr[i].name.equals(name)) {
+			if (arr[i].getName().equals(name)) {
 				str = name + "님의 잔고는 " + arr[i].getBalance() + "원 입니다.";
 				break;
 			}
